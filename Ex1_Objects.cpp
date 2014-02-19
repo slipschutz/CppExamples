@@ -19,7 +19,6 @@ Student::Student(){
 Student::~Student(){
   cout<<"Destroying a Student"<<endl;
 }
-
 void Student::DoHomeWork(){
   cout<<"Working.."<<endl;
   theHealth--;
@@ -27,8 +26,8 @@ void Student::DoHomeWork(){
 int main(int argv,char ** argc){  //Always need a main
   Student myInstanceOfTheStudentClassWhichIsAStudentObject;
   cout<<"My Health is "<<myInstanceOfTheStudentClassWhichIsAStudentObject.GetHealth()<<endl;
-
-
+  myInstanceOfTheStudentClassWhichIsAStudentObject.DoHomeWork();
+  cout<<"My Health is now "<<myInstanceOfTheStudentClassWhichIsAStudentObject.GetHealth()<<endl;
   return 0;
 }
 
