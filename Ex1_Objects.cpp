@@ -1,3 +1,4 @@
+
 #include <iostream> //Standard Library input output classes and methods
 using namespace std;  //Use the standard Namespace
 
@@ -12,6 +13,7 @@ private:
 
 };//Class Definition always ends with ;
 
+
 Student::Student(){
   cout<<"Making a Student"<<endl;
   theHealth=100;//Defualt Start Value for Health
@@ -23,11 +25,15 @@ void Student::DoHomeWork(){
   cout<<"Working.."<<endl;
   theHealth--;
 }
+
+
 int main(int argv,char ** argc){  //Always need a main
   Student myInstanceOfTheStudentClassWhichIsAStudentObject;
+
   cout<<"My Health is "<<myInstanceOfTheStudentClassWhichIsAStudentObject.GetHealth()<<endl;
   myInstanceOfTheStudentClassWhichIsAStudentObject.DoHomeWork();
   cout<<"My Health is now "<<myInstanceOfTheStudentClassWhichIsAStudentObject.GetHealth()<<endl;
+
   return 0;
 }
 
