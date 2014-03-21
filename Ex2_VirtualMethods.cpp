@@ -1,6 +1,8 @@
 
 #include <iostream> //Standard Library input output classes and methods
 #include <vector>
+#include <algorithm>
+#include <functional>
 using namespace std;  //Use the standard Namespace
 
 
@@ -82,26 +84,18 @@ int main(int argv,char ** argc){  //Always need a main
 
   vector <Student*> aStudentVector(2);
 
-  
-
   //WHAT?!! but what about strongly typed language
   //answer PolyMorphism
   aStudentVector[0]=new UnderGrad();
   aStudentVector[1]=new GradStudent();
 
-  
-
-
-  for (int i=0;i<aStudentVector.size();i++){
-    aStudentVector[i]->DoHomeWork();
-  }
-
+  for_each(aStudentVector.begin(), aStudentVector.end(),
+      mem_fn(&Student::DoHomeWork));
 
   //Now the magic of virtual
   cout<<"******************************"<<endl;
-  for (int i=0;i<aStudentVector.size();i++){
-    aStudentVector[i]->DoHomeWorkVirtual();
-  }
+  for_each(aStudentVector.begin(), aStudentVector.end(),
+      mem_fn(&Student::DoHomeWorkVirtual));
 
   return 0;
 }
