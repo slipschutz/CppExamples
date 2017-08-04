@@ -35,4 +35,4 @@ $(LIBRARY) : $(OBJECTS)
 test:
 	@echo $(OBJECTS)
 clean:
-	-rm -f *Parsed.o
+	-rm -f $(OBJECTS) $(LIBRARY)
